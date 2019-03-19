@@ -18,7 +18,7 @@ public class DuraTeleOp extends OpMode {
     }
 
     public void loop() {
-        hardware.leftDrive.setPower(gamepad.left_stick_y);
-        hardware.rightDrive.setPower(gamepad.right_stick_y);
+        hardware.leftDrive.setPower(gamepad1.left_stick_y);
+        hardware.rightDrive.setPower(gamepad1.right_stick_y);
     }
 }
