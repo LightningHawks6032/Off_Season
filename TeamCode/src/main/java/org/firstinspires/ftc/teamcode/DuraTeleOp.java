@@ -13,12 +13,11 @@ public class DuraTeleOp extends OpMode {
 
     public void init() {
         // init hardware
-        hardware = new DuraHardware(hardwareMap, gamepad);
+        hardware = new DuraHardware(hardwareMap, gamepad1);
         hardware.initHardware();
     }
 
     public void loop() {
-        hardware.leftDrive.setPower(gamepad1.left_stick_y);
-        hardware.rightDrive.setPower(gamepad1.right_stick_y);
+        hardware.manageDrive();
     }
 }

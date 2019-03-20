@@ -28,4 +28,11 @@ public class DuraHardware {
         leftDrive.setPower(0);
         rightDrive.setPower(0);
     }
+
+
+    //teleOp Opmodes
+    public void manageDrive(){
+        leftDrive.setPower(gamepad.left_stick_y);
+        rightDrive.setPower(gamepad.right_stick_y);
+    }
 }
