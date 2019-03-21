@@ -4,6 +4,8 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Gamepad;
 
+import android.speech.tts.TextToSpeech;
+
 import org.firstinspires.ftc.teamcode.DuraHardware;
 
 @TeleOp(name="DuraBot TeleOp", group="Iterative Opmode")
@@ -19,5 +21,6 @@ public class DuraTeleOp extends OpMode {
 
     public void loop() {
         hardware.manageDrive();
+        hardware.manageBoost();
     }
 }
