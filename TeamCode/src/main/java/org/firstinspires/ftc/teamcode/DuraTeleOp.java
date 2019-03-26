@@ -3,6 +3,7 @@ package org.firstinspires.ftc.teamcode;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Gamepad;
+import android.media.MediaPlayer;
 
 import android.speech.tts.TextToSpeech;
 
@@ -22,5 +23,6 @@ public class DuraTeleOp extends OpMode {
     public void loop() {
         hardware.manageDrive();
         hardware.manageBoost();
+        hardware.manageSounds();
     }
 }

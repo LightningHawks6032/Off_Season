@@ -5,13 +5,18 @@ import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
+import com.qualcomm.ftccommon.SoundPlayer;
 
+import android.content.Context;
 import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.SoundPool;
 import android.speech.tts.TextToSpeech;
 import android.speech.tts.UtteranceProgressListener;
 import android.speech.tts.Voice;
 
 import java.util.Locale;
+import android.media.MediaPlayer;
 
 public class DuraHardware {
     public DcMotor leftDrive;
@@ -25,6 +30,9 @@ public class DuraHardware {
     private boolean tts = false;
 
     private double boost = 1;
+
+    public SoundPool mySound;
+    public int soundID;
 
     public DuraHardware(HardwareMap nHMap, Gamepad nGP){
         hMap = nHMap;
@@ -50,6 +58,9 @@ public class DuraHardware {
             });
             textToSpeech.setLanguage(Locale.US);
         }
+
+        mySound = new SoundPool(1, AudioManager.STREAM_MUSIC, 0); // PSM
+        soundID = mySound.load(hMap.appContext, R.raw.crash, 1); // PSM
 
     }
 
@@ -93,5 +104,12 @@ public class DuraHardware {
             }
         //}
     }
+
+    public void manageSounds() {
+        if (gamepad.x) {
+            mySound.play(soundID, 1, 1, 1, 0, 1);
+        }
+    }
+
 
 }
