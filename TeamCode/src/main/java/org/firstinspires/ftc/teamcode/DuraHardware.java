@@ -30,6 +30,7 @@ public class DuraHardware {
     private boolean tts = false;
 
     private double boost = 1;
+    private double direction = 1;
 
     public SoundPool mySound;
     public int soundID;
@@ -69,8 +70,9 @@ public class DuraHardware {
 
     //drive
     public void manageDrive(){
-        leftDrive.setPower(gamepad.left_stick_y * boost);
-        rightDrive.setPower(gamepad.right_stick_y * boost);
+        leftDrive.setPower(gamepad.left_stick_y * boost * direction);
+        rightDrive.setPower(gamepad.right_stick_y * boost * direction);
+        setMotorDirections();
     }
 
     //boost
@@ -109,6 +111,11 @@ public class DuraHardware {
         if (gamepad.x) {
             mySound.play(soundID, 1, 1, 1, 0, 1);
         }
+    }
+
+    private void setMotorDirections(){
+        if(gamepad.a) direction = 1;
+        if(gamepad.b) direction = -1;
     }
 
 
