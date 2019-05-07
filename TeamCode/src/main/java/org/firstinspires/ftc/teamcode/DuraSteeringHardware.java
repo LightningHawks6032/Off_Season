@@ -26,8 +26,7 @@ public class DuraSteeringHardware{
     public int STEER_RIGHT_LIMIT = 0;
     private double boost = 0.6;
 
-    public DcMotor leftDrive;
-    public DcMotor rightDrive;
+    public DcMotor backDrive;
     public DcMotor frontSteering;
 
     private Gamepad gamepad;
@@ -39,23 +38,20 @@ public class DuraSteeringHardware{
     }
 
     public void initHardware() {
-        leftDrive = hMap.get(DcMotor.class, "lm");
-        rightDrive = hMap.get(DcMotor.class, "rm");
+        backDrive = hMap.get(DcMotor.class, "bd");
         frontSteering = hMap.get(DcMotor.class, "fs");
 
-        leftDrive.setDirection(DcMotor.Direction.FORWARD);
-        rightDrive.setDirection(DcMotor.Direction.REVERSE);
+        backDrive.setDirection(DcMotor.Direction.FORWARD);
         frontSteering.setDirection(DcMotor.Direction.FORWARD);
 
-        leftDrive.setPower(0);
-        rightDrive.setPower(0);
+
+        backDrive.setPower(0);
         frontSteering.setPower(0);
     }
 
     //drive
     public void manageDrive(){
-        leftDrive.setPower(gamepad.left_stick_y * boost);
-        rightDrive.setPower(gamepad.right_stick_y * boost);
+        backDrive.setPower(gamepad.left_stick_y * boost);
     }
 
     public void manageSteering(){
