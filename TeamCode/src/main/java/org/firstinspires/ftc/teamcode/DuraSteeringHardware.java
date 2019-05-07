@@ -58,5 +58,5 @@ public class DuraSteeringHardware{
     public void manageSteering(){
 
     }
-        
+
     }

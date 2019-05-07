@@ -21,8 +21,8 @@ public class DuraSteeringTest extends OpMode {
     }
 
     public void loop() {
-        if (gamepad1.left_trigger > 0) hardware.frontSteering.setPower(0.3);
-        if (gamepad1.right_trigger > 0) hardware.frontSteering.setPower(-0.3);
+        if (gamepad1.left_trigger > 0) hardware.frontSteering.setPower(-0.3);
+        if (gamepad1.right_trigger > 0) hardware.frontSteering.setPower(0.3);
         if (gamepad1.right_trigger * gamepad1.right_trigger > 0) hardware.frontSteering.setPower(0);
         if (gamepad1.right_trigger + gamepad1.right_trigger <= 0) hardware.frontSteering.setPower(0);
 
