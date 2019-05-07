@@ -26,6 +26,9 @@ public class DuraSteeringTest extends OpMode {
         if (gamepad1.right_trigger * gamepad1.right_trigger > 0) hardware.frontSteering.setPower(0);
         if (gamepad1.right_trigger + gamepad1.right_trigger <= 0) hardware.frontSteering.setPower(0);
 
-        telemetry.addData("Steer encoder value: " ,hardware.frontSteering.getCurrentPosition());
+        hardware.manageDrive();
+
+        telemetry.addData("Steer encoder value: ", hardware.frontSteering.getCurrentPosition());
+        telemetry.update();
     }
 }

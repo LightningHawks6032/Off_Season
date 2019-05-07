@@ -29,6 +29,7 @@ public class DuraSteeringHardware{
     public DcMotor backDrive;
     public DcMotor frontSteering;
 
+
     private Gamepad gamepad;
     private HardwareMap hMap;
 
@@ -57,5 +58,5 @@ public class DuraSteeringHardware{
     public void manageSteering(){
 
     }
-
+        
     }
