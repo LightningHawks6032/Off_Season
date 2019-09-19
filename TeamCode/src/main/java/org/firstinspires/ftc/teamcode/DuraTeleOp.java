@@ -23,6 +23,6 @@ public class DuraTeleOp extends OpMode {
     public void loop() {
         hardware.manageDrive();
         hardware.manageBoost();
-        hardware.manageSounds();
+        //hardware.manageSounds();
     }
 }

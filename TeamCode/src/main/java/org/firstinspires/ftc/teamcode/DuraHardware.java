@@ -1,6 +1,7 @@
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.hardware.DcMotor;
+import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -72,7 +73,7 @@ public class DuraHardware {
     public void manageDrive(){
         leftDrive.setPower(gamepad.left_stick_y * boost * direction);
         rightDrive.setPower(gamepad.right_stick_y * boost * direction);
-        setMotorDirections();
+        //setMotorDirections();
     }
 
     //boost
@@ -81,6 +82,8 @@ public class DuraHardware {
         if (gamepad.left_bumper) boost = 0.3;
     }
 
+
+    /*
     //attempt at text to speech
     public void manageSpeech(){
 
@@ -113,10 +116,12 @@ public class DuraHardware {
         }
     }
 
+
     private void setMotorDirections(){
         if(gamepad.a) direction = 1;
         if(gamepad.b) direction = -1;
     }
+    */
 
 
 }
